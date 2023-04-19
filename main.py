@@ -3,12 +3,6 @@ import streamlit as st
 from google_auth_oauthlib.flow import Flow
 
 
-def nav_to(url):
-    nav_script = """
-        <meta http-equiv="refresh" content="0; url='%s'">
-    """ % (url)
-    st.write(nav_script, unsafe_allow_html=True)
-
 
 
 
@@ -21,7 +15,7 @@ flow = Flow.from_client_secrets_file(
 
 auth_uri = flow.authorization_url()
 
-nav_to(auth_uri[0])
+st.write(auth_uri[0])
 
 
 
