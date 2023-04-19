@@ -22,4 +22,4 @@ st.markdown(link, unsafe_allow_html=True)
 
 
 
-
+st.write(st.experimental_get_query_params()['code'])
