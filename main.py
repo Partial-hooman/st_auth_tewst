@@ -6,7 +6,7 @@ import asyncio
 
 from session_state import get
 from httpx_oauth.clients.google import GoogleOAuth2
-client = GoogleOAuth2("1023844332180-26u1j2e19ppqkco37kfu61h3ijqf8e6o.apps.googleusercontent.com", client_secret)
+client = GoogleOAuth2("1023844332180-26u1j2e19ppqkco37kfu61h3ijqf8e6o.apps.googleusercontent.com", "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")
 
 async def write_access_token(client,
                              redirect_uri,
@@ -21,12 +21,12 @@ try:
     st.write(code)
     token = asyncio.run(
     write_access_token(client=client,
-                       redirect_uri=redirect_uri,
+                       redirect_uri="https://partial-hooman-st-auth-tewst-main-rfcit3.streamlit.app/",
                        code=code))
     session_state.token = token
     st.write(session_state.token)
-except:
-    
+except Exception as e:
+    st.write(e)
 
     flow = Flow.from_client_secrets_file(
                  "client_secret_1023844332180-26u1j2e19ppqkco37kfu61h3ijqf8e6o.apps.googleusercontent.com.json",
