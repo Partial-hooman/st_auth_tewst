@@ -14,7 +14,7 @@ except:
     
 
     flow = Flow.from_client_secrets_file(
-                 "client_secret_1023844332180-knicf5jgjp1d286076t71tp9ntjlbcr5.apps.googleusercontent.com.json",
+                 "client_secret_1023844332180-26u1j2e19ppqkco37kfu61h3ijqf8e6o.apps.googleusercontent.com.json",
                  scopes=['https://www.googleapis.com/auth/webmasters.readonly'],
                  redirect_uri='https://partial-hooman-st-auth-tewst-main-rfcit3.streamlit.app/')
 
