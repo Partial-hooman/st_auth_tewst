@@ -8,7 +8,7 @@ from google_auth_oauthlib.flow import Flow
 
 
 try:
-    st.write(st.experimental_get_query_params()['code'])
+    st.write(st.experimental_get_query_params()['code'][0])
     
 except:
     
