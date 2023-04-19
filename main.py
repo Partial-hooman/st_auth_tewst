@@ -1,15 +1,30 @@
 import streamlit as st 
 
 from google_auth_oauthlib.flow import Flow
+import os
+import asyncio
 
+from session_state import get
+from httpx_oauth.clients.google import GoogleOAuth2
+client = GoogleOAuth2(client_id, client_secret)
 
-
+async def write_access_token(client,
+                             redirect_uri,
+                             code):
+    token = await client.get_access_token(code, redirect_uri)
+    return token
 
 
 
 try:
-    st.write(st.experimental_get_query_params()['code'][0])
-    
+    code = st.experimental_get_query_params()['code'][0]
+    st.write(code)
+    token = asyncio.run(
+    write_access_token(client=client,
+                       redirect_uri=redirect_uri,
+                       code=code))
+    session_state.token = token
+    st.write(session_state.token)
 except:
     
 
