@@ -14,12 +14,12 @@ flow = Flow.from_client_secrets_file(
 
 
 auth_uri = flow.authorization_url()
-st.write(auth_uri[0])
+
 
 
 
 st.write(f'''<h1>
     Please login using this <a target="_self"
-    href=f"{auth_uri}">url</a></h1>''',
+    href=f"{auth_uri[0]}">url</a></h1>''',
          unsafe_allow_html=True)
 
