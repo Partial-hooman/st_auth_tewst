@@ -14,6 +14,7 @@ flow = Flow.from_client_secrets_file(
 
 
 auth_uri = flow.authorization_url()
+st.write(auth_uri)
 
 
 
