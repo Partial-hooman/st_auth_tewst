@@ -15,7 +15,9 @@ flow = Flow.from_client_secrets_file(
 
 auth_uri = flow.authorization_url()
 
-link = f'[GitHub]({auth_uri[0]})'
+st.header("please authorize using the follow:")
+
+link = f'[AUTHORIZE]({auth_uri[0]})'
 st.markdown(link, unsafe_allow_html=True)
 
 
