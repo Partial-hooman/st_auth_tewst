@@ -1,5 +1,5 @@
 import streamlit as st 
-
+from googleapiclient.discovery import build, Resource
 from google_auth_oauthlib.flow import Flow
 import os
 import asyncio
@@ -22,8 +22,11 @@ try:
     write_access_token(client=client,
                        redirect_uri="https://partial-hooman-st-auth-tewst-main-rfcit3.streamlit.app/",
                        code=code))
-    
+    API_SERVICE_NAME = "webmasters"
+    API_VERSION = "v3"
     st.write(token)
+    service = build(API_SERVICE_NAME, API_VERSION, credentials=token)
+    st.write(service.sites().list().execute())
 except Exception as e:
     st.write(e)
 
