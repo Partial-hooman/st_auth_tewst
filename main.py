@@ -6,7 +6,7 @@ import asyncio
 
 from session_state import get
 from httpx_oauth.clients.google import GoogleOAuth2
-client = GoogleOAuth2(client_id, client_secret)
+client = GoogleOAuth2("1023844332180-26u1j2e19ppqkco37kfu61h3ijqf8e6o.apps.googleusercontent.com", client_secret)
 
 async def write_access_token(client,
                              redirect_uri,
