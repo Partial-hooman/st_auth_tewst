@@ -15,7 +15,8 @@ flow = Flow.from_client_secrets_file(
 
 auth_uri = flow.authorization_url()
 
-st.write(auth_uri[0])
+link = f'[GitHub]({auth_uri[0]})'
+st.markdown(link, unsafe_allow_html=True)
 
 
 
