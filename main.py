@@ -1,5 +1,5 @@
 import streamlit as st 
-from django.core.files.uploadedfile import UploadedFile
+import BytesIO
 #from googleapiclient.discovery import build, Resource
 #from google_auth_oauthlib.flow import Flow
 #import os
