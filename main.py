@@ -45,4 +45,6 @@ import streamlit as st
 
 button = st.file_uploader("gaming")
 
-st.write(type(button))
+if isinstance(button, streamlit.runtime.uploaded_file_manager.UploadedFile(record: streamlit.runtime.uploaded_file_manager.UploadedFileRec)):
+   st.write("fuck yeah")
+
