@@ -46,7 +46,7 @@ from django.core.files.uploadedfile import UploadedFile
 
 button = st.file_uploader("gaming")
 
-print(type(button))
+st.write(type(button))
 
 if isinstance(button, UploadedFile):
    st.write("fuck yeah")
