@@ -1,5 +1,5 @@
 import streamlit as st 
-
+from streamlit_options_menu import options_menu
 #from googleapiclient.discovery import build, Resource
 #from google_auth_oauthlib.flow import Flow
 #import os
@@ -43,13 +43,16 @@ import streamlit as st
 
 #    link = f'[AUTHORIZE]({auth_uri[0]})'
 #    st.markdown(link, unsafe_allow_html=True)
+with st.sidebar:
+     choose = option_menu("app",["m","s"])
+ 
+if choose == "m":
+   st.write(st.session_state)
+   button = st.file_uploader("bro",key="bro")
+elif choose == "s":
+   st.write(st.session_state)
+   button = st.file_uploader("gro",key="gro")
 
-button = st.file_uploader("gaming")
 
 
-
-if isinstance(button, st.runtime.uploaded_file_manager.UploadedFile):
-   st.write("fuck yeah")
-else:
-   st.write("noooooo")
 
