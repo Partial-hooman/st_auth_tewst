@@ -1,5 +1,5 @@
 import streamlit as st 
-import BytesIO
+
 #from googleapiclient.discovery import build, Resource
 #from google_auth_oauthlib.flow import Flow
 #import os
@@ -48,7 +48,7 @@ button = st.file_uploader("gaming")
 
 st.write(type(button))
 
-if isinstance(button, UploadedFile):
+if isinstance(button, bytes):
    st.write("fuck yeah")
 else:
    st.write("noooooo")
