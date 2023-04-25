@@ -4,3 +4,4 @@ httpx-oauth
 google-auth
 google-auth-oauthlib
 django
+streamlit-option-menu
